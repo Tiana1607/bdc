@@ -1,0 +1,169 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: lightblue;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.chart-container {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    max-width: 900px;
+}
+
+.chart-title {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-size: 2rem;
+}
+
+.chart {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 60px;
+    margin-bottom: 40px;
+    position: relative;
+    height: 400px;
+}
+
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-right: 10px;
+    color: #666;
+    font-weight: 500;
+}
+
+.y-axis span {
+    text-align: right;
+    font-size: 0.9rem;
+}
+
+.year-column {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.year-label {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.bar-group {
+    display: flex;
+    align-items: end;
+    gap: 8px;
+    height: 350px;
+}
+
+.bar {
+    width: 70px;
+    border-radius: 5px 5px 0 0;
+    position: relative;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.bar:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.bar-impots {
+    background: linear-gradient(to top, #e74c3c, #c0392b);
+}
+
+.bar-douanes {
+    background: linear-gradient(to top, #3498db, #2980b9);
+}
+
+.bar-non-fiscales {
+    background: linear-gradient(to top, #2ecc71, #27ae60);
+}
+
+.bar-dons {
+    background: linear-gradient(to top, #f39c12, #e67e22);
+}
+
+.bar-value {
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.8);
+    color: white;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.bar:hover .bar-value {
+    opacity: 1;
+}
+
+.legend {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 4px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+    .chart {
+        gap: 30px;
+        height: 300px;
+    }
+    
+    .bar {
+        width: 50px;
+    }
+    
+    .bar-group {
+        height: 250px;
+    }
+    
+    .legend {
+        gap: 15px;
+    }
+}
